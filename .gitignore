@@ -1,0 +1,20 @@
+# --- Ambiente virtuale Python ---
+# Contiene tutte le librerie installate (Selenium, Pytest, ecc).
+# E' pesante e specifico del tuo PC: chi clona il progetto lo ricrea con
+# "pip install -r requirements_backup.txt", quindi non va mai versionato.
+.venv/
+venv/
+
+# --- Cache Python ---
+# File generati automaticamente ogni volta che esegui il codice.
+__pycache__/
+*.pyc
+
+# --- Impostazioni personali dell'IDE e di Claude ---
+.idea/
+.claude/
+
+# --- Cache e report generati da Pytest ---
+.pytest_cache/
+reports/
+E2Etest/reports/

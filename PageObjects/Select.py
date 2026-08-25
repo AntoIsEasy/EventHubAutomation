@@ -1,0 +1,27 @@
+from selenium.webdriver.common.by import By
+from Utils.BrowerUtils import Utility
+
+
+class Selection(Utility):
+    def __init__(self,driver):
+        super().__init__(driver)
+
+        self.driver = driver
+        self.add_button = (By.XPATH, "//button[text()='+']")
+        self.customer_name_loc = (By.CSS_SELECTOR,"#customerName")
+        self.customer_email_loc = (By.ID,"customer-email")
+        self.customer_phone_number_loc = (By.ID,"phone")
+        self.confirm_button = (By.ID,"confirm-booking")
+        self.succesfull_text = (By.XPATH, "//h3[contains(text(),'Booking Confirmed')]")
+
+    def setting_credentials(self,customer_name,customer_email,customer_phone_number):
+        self.driver.find_element(*self.add_button).click()
+        self.driver.find_element(*self.customer_name_loc).send_keys(customer_name)
+        self.driver.find_element(*self.customer_email_loc).send_keys(customer_email)
+        self.driver.find_element(*self.customer_phone_number_loc).send_keys(customer_phone_number)
+
+
+    def confirmation(self):
+        self.driver.find_element(*self.confirm_button).click()
+        Successful_booking = self.driver.find_element(*self.succesfull_text).text
+        return Successful_booking
