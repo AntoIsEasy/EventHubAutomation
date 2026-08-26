@@ -13,6 +13,7 @@ __pycache__/
 # --- Impostazioni personali dell'IDE e di Claude ---
 .idea/
 .claude/
+report/
 
 # --- Cache e report generati da Pytest ---
 .pytest_cache/
