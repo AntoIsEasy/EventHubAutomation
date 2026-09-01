@@ -1,0 +1,38 @@
+{
+  "data":
+  [
+    {
+      "customer_name": "UserDemo2",
+      "customer_password": "Userdemo2!",
+      "customer_email": "userdemo2@yopmail.com",
+      "customer_phone_number": "+313331234567"
+    },
+    {
+      "customer_name": "UserDemo2",
+      "customer_password": "Userdemo3!",
+      "customer_email": "Userdemo3@ypmail.com",
+      "customer_phone_number": "+313331234567"
+    }
+  ],
+
+  "login": [
+    {
+      "Customer_email": "userdemo3@yopmail.com",
+      "Customer_password": "Userdemo3!"
+
+    },
+
+    {
+      "Customer_email": "userdemo3@yopmal.com",
+      "Customer_password": "Userdemo3!"
+
+    },
+
+    {
+      "Customer_email": "userdemo3@yopmaii.com",
+      "Customer_password": "Userde"
+
+    }
+
+  ]
+}
