@@ -6,7 +6,7 @@ import pytest
 
 from PageObjects.Event import ChooseEvent
 from PageObjects.LoginPage import LoginPage
-data_path = Path(__file__).parent.parent/"Data"/"test_e2e_ok.json"
+data_path = Path(__file__).parent.parent/"Data"/"test_data.json"
 with open(data_path) as f:
     test_data = json.load(f) #test data full dictionary
     test_list = test_data["data"]
@@ -26,7 +26,7 @@ def test_e2e_shopping(browser_settings,test_list_item):
     print(login_class.get_page_title())
 
     #credentials
-    login_class.login_ok(test_list_item["customer_email"],test_list_item["customer_password"])
+    login_class.login_form(test_list_item["customer_email"],test_list_item["customer_password"])
 
     #Sign_in and event_page object for ChooseEvent class
     event_page = login_class.sign_in_button()
