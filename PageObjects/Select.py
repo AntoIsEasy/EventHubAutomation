@@ -22,6 +22,8 @@ class Selection(Utility):
 
 
     def confirmation(self):
-        self.driver.find_element(*self.confirm_button).click()
+        confirm_button = self.driver.find_element(*self.confirm_button)
+        self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", confirm_button)
+        self.driver.execute_script("arguments[0].click();", confirm_button)
         Successful_booking = self.driver.find_element(*self.succesfull_text).text
         return Successful_booking

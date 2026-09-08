@@ -8,7 +8,7 @@ def browser_settings():
 
     driver = webdriver.Chrome()
     driver.implicitly_wait(5)
-    driver.maximize_window()
+    driver.set_window_size(1920,1080)
     yield driver
     driver.quit()
 
