@@ -27,7 +27,7 @@ class ChooseEvent(Utility):
         self.driver.find_element(*self.search_bar).send_keys(event_input)
 
         #book now
-        self.driver.find_element(By.ID, "book-now-btn").click()
+        self.driver.find_element(By.XPATH, "//a[@id='book-now-btn']").click()
         select_data = Selection(self.driver)
         return select_data
 
