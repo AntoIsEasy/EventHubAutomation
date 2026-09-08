@@ -1,9 +1,7 @@
 import time
 
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import NoSuchElementException
 
 from PageObjects.Event import ChooseEvent
 from Utils.BrowerUtils import Utility
@@ -35,12 +33,12 @@ class LoginPage(Utility):
         return event_page
 
     def popup_login(self):
-        try:
+        try:  #try block status is passed when the Login is KO and the alert popup is shown
 
             popup_text = self.driver.find_element(*self.popup_loc).text
             assert  "email or password" in popup_text
 
-        except:
+        except NoSuchElementException: #except block status is passed when the login is OK (first use case)
 
             page_title = self.get_current_url()
             assert page_title == "https://eventhub.rahulshettyacademy.com/"
