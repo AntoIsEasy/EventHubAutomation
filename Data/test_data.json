@@ -1,6 +1,5 @@
 {
-  "data":
-  [
+  "data": [
     {
       "customer_name": "UserDemo2",
       "customer_password": "Userdemo2!",
@@ -14,25 +13,25 @@
       "customer_phone_number": "+313331234567"
     }
   ],
-
   "login": [
     {
       "Customer_email": "userdemo3@yopmail.com",
       "Customer_password": "Userdemo3!"
-
     },
-
     {
       "Customer_email": "userdemo3@yopmal.com",
       "Customer_password": "Userdemo3!"
-
     },
-
     {
-      "Customer_email": "userdemo3@yopmaii.com",
+      "Customer_email": "userdemo3@yopmail.com",
       "Customer_password": "Userde"
+    }
+  ],
 
+  "no_seat_available":
+
+    {"Customer_email":"userdemo4@yopmail.com",
+      "Customer_password": "Userdemo4!"
     }
 
-  ]
 }
