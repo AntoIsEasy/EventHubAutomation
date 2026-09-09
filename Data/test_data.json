@@ -28,10 +28,10 @@
     }
   ],
 
-  "no_seat_available":
+  "no_seat_available":[
 
     {"Customer_email":"userdemo4@yopmail.com",
       "Customer_password": "Userdemo4!"
     }
-
+  ]
 }
