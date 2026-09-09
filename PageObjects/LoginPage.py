@@ -36,7 +36,7 @@ class LoginPage(Utility):
         try:  #try block status is passed when the Login is KO and the alert popup is shown
 
             popup_text = self.driver.find_element(*self.popup_loc).text
-            assert  "email or password" in popup_text, f"Unexpected popup text:{popup_text!r}"
+            assert  "email or password" in popup_text, f"Unexpected popup text:{popup_text}"
 
         except NoSuchElementException: #except block status is passed when the login is OK (first use case)
 
