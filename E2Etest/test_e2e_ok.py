@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from PageObjects.Event import ChooseEvent
+
 from PageObjects.LoginPage import LoginPage
 data_path = Path(__file__).parent.parent/"Data"/"test_data.json"
 with open(data_path) as f:

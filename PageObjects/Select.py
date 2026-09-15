@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from Utils.BrowerUtils import Utility
 
 
+
 class Selection(Utility):
     def __init__(self,driver):
         super().__init__(driver)
@@ -15,12 +16,23 @@ class Selection(Utility):
         self.succesfull_text = (By.XPATH, "//h3[contains(text(),'Booking Confirmed')]")
         self.clear_bookings_loc = (By.XPATH,"//button[text()='Clear all bookings']")
         self.assertion_text = (By.XPATH,"//h3[contains(text(),'yet')]")
+        self.ticket_count_loc = (By.ID,"ticket-count")
+
+
 
     def setting_credentials(self,customer_name,customer_email,customer_phone_number):
-        self.driver.find_element(*self.add_button).click()
+
         self.driver.find_element(*self.customer_name_loc).send_keys(customer_name)
         self.driver.find_element(*self.customer_email_loc).send_keys(customer_email)
         self.driver.find_element(*self.customer_phone_number_loc).send_keys(customer_phone_number)
+
+    def max_ticket_buttons(self):
+
+        while self.driver.find_element(*self.add_button).is_enabled():
+            self.driver.find_element(*self.add_button).click()
+
+        self.ticket_count = self.driver.find_element(*self.ticket_count_loc).text
+
 
 
     def confirmation(self):
@@ -39,4 +51,7 @@ class Selection(Utility):
         text_no_booking = self.driver.find_element(*self.assertion_text).text
         #assert "no bookings"
         assert 'bookings' in text_no_booking
+
+
+
 

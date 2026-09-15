@@ -13,6 +13,7 @@ class ChooseEvent(Utility):
         self.search_bar = (By.CSS_SELECTOR,"input[placeholder='Search events, venues…']")
         self.element_located = (By.XPATH, "//h3[text()='Dilli Diwali Mela']")
         self.my_bookings_loc = (By.XPATH,"//button[text()='My Bookings']")
+        self.book_now_loc = (By.XPATH,"//a[text()='Book Now']") #random book now
 
 
     def search_event(self,event_input):
@@ -36,6 +37,14 @@ class ChooseEvent(Utility):
         self.driver.find_element(*self.my_bookings_loc).click()
         selection_data = Selection(self.driver)
         return selection_data
+
+
+    def book_now(self):
+        self.driver.find_element(*self.book_now_loc).click()
+        select_data = Selection(self.driver)
+        return select_data
+
+
 
 
 
