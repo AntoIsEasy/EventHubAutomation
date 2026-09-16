@@ -16,6 +16,7 @@ def test_clear_the_bookings(browser_settings,test_list_item):  #COORRREEEEGIIIII
     driver = browser_settings
     Login_page = LoginPage(driver)
     Login_page.login_form(test_list_item["Customer_email"],test_list_item["Customer_password"])
+
     event_obj = Login_page.sign_in_button()
     selection_obj = event_obj.my_bookings()
     selection_obj.clear_all_bookings()

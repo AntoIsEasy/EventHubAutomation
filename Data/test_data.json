@@ -9,17 +9,17 @@
     {
       "customer_name": "UserDemo3",
       "customer_password": "Userdemo3!",
-      "customer_email": "Userdemo3@ypmail.com",
+      "customer_email": "userdemo3@yopmail.com",
       "customer_phone_number": "+313331234567"
     }
   ],
   "login": [
     {
-      "Customer_email": "userdemo3@ypmail.com",
+      "Customer_email": "userdemo3@yopmail.com",
       "Customer_password": "Userdemo3!"
     },
     {
-      "Customer_email": "userdemo3@yopl.com",
+      "Customer_email": "userdemo3@yopm.com",
       "Customer_password": "Userdemo3!"
     },
     {

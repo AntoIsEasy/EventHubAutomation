@@ -26,4 +26,3 @@ def test_max_ticket(browser_settings,list_data_users):
     assert select_page.ticket_count == "10"
 
 
-
