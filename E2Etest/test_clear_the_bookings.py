@@ -12,7 +12,7 @@ with open(data_path) as f:
 
 
 @pytest.mark.parametrize("test_list_item",test_data)
-def test_clear_the_bookings(browser_settings,test_list_item):  #COORRREEEEGIIIIII dalle altre parti il nome della def
+def test_clear_the_bookings(browser_settings,test_list_item):
     driver = browser_settings
     Login_page = LoginPage(driver)
     Login_page.login_form(test_list_item["Customer_email"],test_list_item["Customer_password"])

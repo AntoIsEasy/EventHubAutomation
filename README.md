@@ -2,6 +2,7 @@
 
 -Badge set up: it shows the result of the last test run (non-technical users)
 [![Tests](https://github.com/AntoIsEasy/EventHubAutomation/actions/workflows/tests.yml/badge.svg)](https://github.com/AntoIsEasy/EventHubAutomation/actions/workflows/tests.yml)
+- Report: HTML report can be found and downloaded in the job logs. Screenshot added when a test fails.
 
 Event Hub E2E tests running against the prod environment, at:
 https://eventhub.rahulshettyacademy.com/login
