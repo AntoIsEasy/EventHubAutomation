@@ -20,5 +20,11 @@ jobs:
         run: pip install -r requirements_backup.txt
 
       - name: run tests
-        run: pytest -v -s
+        run: pytest -v -s --html=report.html
 
+      - name: upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: report.html
