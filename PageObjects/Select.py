@@ -39,8 +39,8 @@ class Selection(Utility):
         confirm_button = self.driver.find_element(*self.confirm_button)
         self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", confirm_button)
         self.driver.execute_script("arguments[0].click();", confirm_button)
-        Successful_booking = self.driver.find_element(*self.succesfull_text).text
-        return Successful_booking
+        successful_booking = self.driver.find_element(*self.succesfull_text).text
+        return successful_booking
 
     def clear_all_bookings(self):
         self.driver.find_element(*self.clear_bookings_loc).click()

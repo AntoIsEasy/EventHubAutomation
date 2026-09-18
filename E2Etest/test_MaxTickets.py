@@ -8,7 +8,7 @@ with open(data_path) as f:
     test_data = json.load(f)
     list_data = test_data["max_min_ticket"]
 
-
+@pytest.mark.ui
 @pytest.mark.parametrize("list_data_users",list_data)
 def test_max_ticket(browser_settings,list_data_users):
     driver = browser_settings

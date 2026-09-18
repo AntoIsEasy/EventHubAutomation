@@ -29,7 +29,7 @@ class ChooseEvent(Utility):
         self.driver.find_element(*self.search_bar).send_keys(event_input)
 
         #book now
-        self.driver.find_element(By.XPATH, "//a[@id='book-now-btn']").click()
+        self.driver.find_element(By.CSS_SELECTOR, "a[id='book-now-btn']").click() #FRAGILE, CLICCA SU BOOK NOW MA PUO IMPALLARSI PERCHE CI SONO DIVERSI BOOK NOW
         select_data = Selection(self.driver)
         return select_data
 

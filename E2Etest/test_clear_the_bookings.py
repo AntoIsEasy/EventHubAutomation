@@ -10,7 +10,7 @@ with open(data_path) as f:
     json_data=json.load(f)
     test_data=json_data["no_seat_available"]
 
-
+@pytest.mark.ui
 @pytest.mark.parametrize("test_list_item",test_data)
 def test_clear_the_bookings(browser_settings,test_list_item):
     driver = browser_settings
