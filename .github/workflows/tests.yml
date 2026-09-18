@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements_backup.txt
 
       - name: run tests
-        run: pytest -v -s --html=report.html --self-contained-html
+        run: pytest -v -s -m ui --html=report.html --self-contained-html
 
       - name: upload report
         if: always()
