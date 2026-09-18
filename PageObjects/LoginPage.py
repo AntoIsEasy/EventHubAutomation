@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+import requests
 
 from PageObjects.Event import ChooseEvent
 from Utils.BrowerUtils import Utility
@@ -18,6 +19,7 @@ class LoginPage(Utility):
         self.login_button_locator = (By.CSS_SELECTOR,"#login-btn")
         self.error_popup_locator = (By.CSS_SELECTOR,"div[aria-live='polite']")
         self.popup_loc = (By.XPATH, "//p[text()='Invalid email or password']")
+        self.user_mail_loc = (By.ID,"user-email-display")
 
 
 
@@ -29,21 +31,32 @@ class LoginPage(Utility):
 
 
     def sign_in_button(self):
-        #sign in button
+        #login sign in button
         self.driver.find_element(*self.login_button_locator).click()
         event_page = ChooseEvent(self.driver)
         return event_page
 
-    def popup_login(self):
-        try:  #try block status is passed when the Login is KO and the alert popup is shown
+    def popup_login(self,user_email):
+
+        try:
             WebDriverWait(self.driver,3).until(EC.text_to_be_present_in_element(self.popup_loc,"email or password"))
+
+            popup_present = True
+
+        except TimeoutException:
+            popup_present = False
+
+        if popup_present:
             popup_text = self.driver.find_element(*self.popup_loc).text
-            assert  "email or password" in popup_text, f"Unexpected popup text:{popup_text}"
+            assert "email or password" in popup_text, f"Unexpected popup text:{popup_text}"
+        else:
+            user_mail_shown = self.driver.find_element(*self.user_mail_loc).text
+            assert user_mail_shown == user_email
+            print(user_mail_shown)
 
-        except TimeoutException: #except block status is passed when the login is OK (first use case)
 
-            page_title = self.get_current_url()
-            assert page_title == "https://eventhub.rahulshettyacademy.com/"
+
+
 
 
 
