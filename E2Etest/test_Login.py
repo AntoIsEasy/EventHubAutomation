@@ -1,6 +1,6 @@
 import json
 import pytest
-from PageObjects.LoginPage import LoginPage
+from PageObjects.Login import LoginPage
 from pathlib import Path
 
 data_path = Path(__file__).parent.parent/"Data"/"test_data.json"

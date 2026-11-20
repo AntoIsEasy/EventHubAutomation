@@ -1,11 +1,11 @@
 import json
-import time
+
 from pathlib import Path
 
 import pytest
 
 
-from PageObjects.LoginPage import LoginPage
+from PageObjects.Login import LoginPage
 data_path = Path(__file__).parent.parent/"Data"/"test_data.json"
 with open(data_path) as f:
     test_data = json.load(f) #test data full dictionary
