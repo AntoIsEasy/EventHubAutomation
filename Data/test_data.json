@@ -38,5 +38,11 @@
       "Customer_email": "userdemo5@yopmail.com",
       "Customer_password": "Userdemo5!"
     }
+  ],
+  "registration":[
+    {
+      "New_customer_email" : "userdemox@yopmail.com",
+      "New_customer_password" : "Userdemox1!"
+    }
   ]
 }
