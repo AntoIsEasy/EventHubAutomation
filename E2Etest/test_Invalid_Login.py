@@ -6,7 +6,7 @@ from pathlib import Path
 data_path = Path(__file__).parent.parent/"Data"/"test_data.json"
 with open(data_path) as f:
     login_data_dict = json.load(f)
-    login_data = login_data_dict["login"]
+    login_data = login_data_dict["Invalid_Login"]
 
 @pytest.mark.ui
 @pytest.mark.parametrize("test_data_list",login_data)
@@ -22,6 +22,8 @@ def test_login_ok(browser_settings,test_data_list):
     login_class.sign_in_button()
 
     #Login KO - popup check
-    login_class.popup_login(test_data_list["Customer_email"])
+    actual_popup = login_class.popup_login()
+
+    assert "Invalid email or password" in actual_popup
 
 

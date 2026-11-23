@@ -13,11 +13,7 @@
       "customer_phone_number": "+313331234567"
     }
   ],
-  "login": [
-    {
-      "Customer_email": "userdemo3@yopmail.com",
-      "Customer_password": "Userdemo3!"
-    },
+  "Invalid_Login": [
     {
       "Customer_email": "userdemo3@yopm.com",
       "Customer_password": "Userdemo3!"
@@ -25,6 +21,13 @@
     {
       "Customer_email": "userdemo3@yopmail.com",
       "Customer_password": "Userde"
+    }
+
+  ],
+  "login": [
+    {
+      "Customer_email": "userdemo3@yopmail.com",
+      "Customer_password": "Userdemo3!"
     }
   ],
   "no_seat_available": [
