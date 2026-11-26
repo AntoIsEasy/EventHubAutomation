@@ -24,14 +24,8 @@ class ChooseEvent(Utility):
         # native click gets intercepted by the footer on wide/maximized viewports
         # (layout overlap on this site), so click via JS instead
         self.driver.execute_script("arguments[0].click();", explore_button)
-
-        #search
-        self.driver.find_element(*self.search_bar).send_keys(event_input)
-
-        #book now
-        self.driver.find_element(By.CSS_SELECTOR, "a[id='book-now-btn']").click() #FRAGILE, CLICCA SU BOOK NOW MA PUO IMPALLARSI PERCHE CI SONO DIVERSI BOOK NOW
-        select_data = Selection(self.driver)
-        return select_data
+        select_class = Selection(self.driver)
+        return select_class
 
     def my_bookings(self):
         self.driver.find_element(*self.my_bookings_loc).click()

@@ -1,5 +1,3 @@
-import time
-
 import pytest
 import pytest_html
 from selenium import webdriver
@@ -8,7 +6,7 @@ from selenium import webdriver
 def browser_settings():
 
     chrome_options = webdriver.ChromeOptions()
-    #chrome_options.add_argument("headless")
+    chrome_options.add_argument("--headless")
     driver = webdriver.Chrome(options=chrome_options)
     driver.implicitly_wait(5)
     driver.set_window_size(1920,1080)

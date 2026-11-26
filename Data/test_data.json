@@ -1,17 +1,29 @@
 {
   "data": [
     {
-      "customer_name": "UserDemo2",
+      "customer_name": "",
       "customer_password": "Userdemo2!",
-      "customer_email": "userdemo2@yopmail.com",
-      "customer_phone_number": "+313331234567"
+      "customer_email": "userdemo2yopmail.com",
+      "customer_phone_number": "123456789"
     },
     {
-      "customer_name": "UserDemo3",
+      "customer_name": "a",
       "customer_password": "Userdemo3!",
-      "customer_email": "userdemo3@yopmail.com",
-      "customer_phone_number": "+313331234567"
+      "customer_email": "userdemo2@yopmail.",
+      "customer_phone_number": ""
+    },
+    {
+      "customer_name": "a",
+      "customer_password": "Userdemo3!",
+      "customer_email": "@yopmail.com",
+      "customer_phone_number": "aaaaaaaaaa"
     }
+  ],
+  "User_registered": [
+     {
+      "already_registered_email": "userdemo1@yopmail.com",
+      "already_registered_pqassword": "Userdemo1!"
+     }
   ],
   "Invalid_Login": [
     {
@@ -44,8 +56,8 @@
   ],
   "registration":[
     {
-      "New_customer_email" : "userdemox@yopmail.com",
-      "New_customer_password" : "Userdemox1!"
+      "New_customer_email" : "@yopmail.com",
+      "New_customer_password" : "Userdemo1!"
     }
   ]
 }

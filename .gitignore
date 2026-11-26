@@ -14,8 +14,13 @@ __pycache__/
 .idea/
 .claude/
 report/
+reports
 
 # --- Cache e report generati da Pytest ---
 .pytest_cache/
 reports/
 E2Etest/reports/
+
+#--- cartelle di appoggio o memo
+ApiTest
+E2Etest/assets

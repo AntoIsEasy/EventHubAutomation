@@ -10,15 +10,13 @@ with open(data_path) as f:
     json_data=json.load(f)
     test_data=json_data["no_seat_available"]
 
-@pytest.mark.ui
 @pytest.mark.parametrize("test_list_item",test_data)
 def test_clear_the_bookings(browser_settings,test_list_item):
     driver = browser_settings
     Login_page = LoginPage(driver)
     Login_page.login_form(test_list_item["Customer_email"],test_list_item["Customer_password"])
-
+    #go on "my bookings page" and erase it
     event_obj = Login_page.sign_in_button()
     selection_obj = event_obj.my_bookings()
-    selection_obj.clear_all_bookings()
-
-    time.sleep(3)
+    no_bookings_text = selection_obj.clear_all_bookings()
+    assert 'bookings' in no_bookings_text

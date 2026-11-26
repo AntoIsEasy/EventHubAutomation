@@ -10,7 +10,7 @@ with open(data_path) as f:
 
 @pytest.mark.ui
 @pytest.mark.parametrize("test_data_list",login_data)
-def test_login_ok(browser_settings,test_data_list):
+def test_invalid_login(browser_settings,test_data_list):
     driver = browser_settings
 
     login_class = LoginPage(driver)

@@ -46,9 +46,9 @@ class LoginPage(Utility):
         return registration_class
 
 
-
     def popup_login(self):
-        actual_popup_text = WebDriverWait(self.driver,10).until(EC.visibility_of_element_located(self.popup_loc)).text
+        actual_popup_text = WebDriverWait(self.driver,10).until(
+            EC.visibility_of_element_located(self.popup_loc)).text
         return actual_popup_text
 
 

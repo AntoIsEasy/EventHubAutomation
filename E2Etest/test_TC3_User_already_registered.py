@@ -17,11 +17,14 @@ def test_user_already_registered(browser_settings,user_credentials):
     driver = browser_settings
 
     login_class = LoginPage(driver)
+    #go on the registration page and insert any already registered user credentials
     get_registration_page = login_class.register_button()
     get_registration_page.registration_credentials(user_credentials["New_customer_email"],user_credentials["New_customer_password"])
 
+    #click on the register button
     get_registration_page.create_account_button()
 
+    #explicit wait on the "alredy regstered" popup
     popup = WebDriverWait(driver,10).until(EC.visibility_of_element_located(get_registration_page.popup_loc)).text
 
     assert "Email already registered" in popup, f"Il popup non è stato mostrato o il testo'{popup}' non compare"
