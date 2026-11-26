@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 from PageObjects.Login import LoginPage
 import pytest
+from ApiUtils.ApiUtils import UtilsAPI
 
 data_path = Path(__file__).parent.parent/"Data"/"test_data.json"
 with open(data_path) as f:
@@ -20,9 +21,15 @@ def test_max_ticket(browser_settings,list_data_users):
 
     #find book now on available event
     select_page = event_selection.book_now()
-    select_page.max_ticket_buttons()
+
+    #API calls to retrieve the value of the availableSeats (max number of tickets)
+    Api_calls = UtilsAPI()
+    get_token = Api_calls.get_token(list_data_users["Customer_email"],list_data_users["Customer_password"])
+    availableSeats = Api_calls.get_ticket_numbers(get_token)
+
+    actual_seats_booked = select_page.max_ticket_buttons()
 
     #check if the user has clicked 10 times
-    assert select_page.ticket_count == "10"
+    assert int(actual_seats_booked) == availableSeats
 
 

@@ -21,9 +21,7 @@ def test_registration_ok(browser_settings,credentials):
 
     registration_class.registration_credentials(credentials["New_customer_email"],credentials["New_customer_password"])
     registration_class.create_account_button()
-    shown_email = WebDriverWait(driver, 10).until(
-        EC.visibility_of_element_located(login_class.user_mail_loc)
-    ).text
+    shown_email = registration_class.get_popup_text()
     assert "@" in shown_email, f"Nessuna mail mostrata in homepage: '{shown_email}'"
 
 
