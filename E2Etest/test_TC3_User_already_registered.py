@@ -7,10 +7,11 @@ from pathlib import Path
 import json
 import pytest
 
+
 Data_path = Path(__file__).parent.parent/"Data"/"test_data.json"
 with open(Data_path) as f:
     list_test_data = json.load(f)
-    test_data = list_test_data["registration"]
+    test_data = list_test_data["User_registered"]
 
 @pytest.mark.parametrize("user_credentials",test_data)
 def test_user_already_registered(browser_settings,user_credentials):
@@ -19,7 +20,7 @@ def test_user_already_registered(browser_settings,user_credentials):
     login_class = LoginPage(driver)
     #go on the registration page and insert any already registered user credentials
     get_registration_page = login_class.register_button()
-    get_registration_page.registration_credentials(user_credentials["New_customer_email"],user_credentials["New_customer_password"])
+    get_registration_page.registration_credentials(user_credentials["already_registered_email"],user_credentials["already_registered_pqassword"])
 
     #click on the register button
     get_registration_page.create_account_button()
